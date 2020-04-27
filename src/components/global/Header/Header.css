@@ -1,0 +1,339 @@
+header {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    background-color: var(--current-background);
+    border-bottom: 1px solid var(--current-border-color);
+    box-shadow: 0 3px 4px #35353526;
+}
+
+.logo:hover {
+    opacity: .8;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    opacity: .5;
+    transition: opacity .2s ease-in-out;
+}
+
+.logo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.logoin {
+    opacity: 1;
+}
+
+/*
+Upper
+
+*/
+
+.upperHeader .logo {
+    margin: auto auto auto;
+}
+
+.upperHeader {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 100%;
+    height: 50%;
+    margin: 5px auto 0;
+    padding: 0;
+}
+
+.upperHeader::after {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    border-top: 1px solid #f04323;
+    border-bottom: 1px solid #1da8df;
+}
+
+.upperHeader .user {
+    display: flex;
+    justify-content: space-around;
+    margin: auto auto auto auto;
+}
+
+.user>a:hover {
+    color: var(--current-text-color-hover);
+}
+
+.user>a {
+    color: var(--current-text-color);
+    text-decoration: none;
+    margin: auto 5px;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+}
+
+.user .dropdown.hidden>a {
+    background: var(--current-background-contrast);
+    color: var(--current-text-color);
+}
+
+.user .dropdown:hover>a {
+    background: var(--current-background-contrast-hover);
+    color: var(--current-text-color-hover);
+}
+
+.user .dropdown form {
+    margin: auto;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.group {
+    position: relative;
+    margin: 15px auto 10px;
+}
+
+.group input {
+    font-size: 13px;
+    padding: 8px 5px;
+    background: transparent;
+    border: 1px solid var(--current-border-color);
+    border-radius: 8px;
+}
+
+.group input:focus {
+    outline: none;
+}
+
+.group label {
+    color: var(--current-text-color);
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+
+.group input:focus~label, .group input:valid~label, .group input::content~label {
+    top: -20px;
+    font-size: 14px;
+    color: var(--current-text-color-hover);
+}
+
+.user .dropdown>a {
+    background: var(--current-border-color);
+    color: #353535;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: auto 5px;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+}
+
+.searchbar {
+    width: 20%;
+    max-width: 350px;
+    height: 20px;
+    margin: auto auto;
+    border: 1px solid var(--current-border-color);
+    padding: 4px;
+    display: flex;
+    position: relative;
+    border-radius: 4px;
+}
+
+.searchbar input:focus~a {
+    transform: scale(1);
+}
+
+.searchbar input {
+    background: none;
+    border: none;
+    color: var(--current-regular-text);
+    outline: none;
+    width: 100%;
+}
+
+.searchbar a:hover {
+    color: #6767677a;
+}
+
+.searchbar a {
+    position: absolute;
+    color: rgba(221, 221, 221, 0.493);
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.151);
+    transform: scale(.8);
+    transition: all .5s cubic-bezier(1, 0, 0, 1);
+}
+
+/*
+
+Lower
+
+*/
+
+.lowerHeader {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 5px 0 0;
+    height: 100%;
+    width: 100%;
+}
+
+.lowerHeader ul {
+    list-style: none;
+    display: block;
+    margin: auto;
+    padding: 0;
+    clear: both;
+}
+
+.lowerHeader ul li {
+    display: inline-block;
+    margin: auto 5px;
+}
+
+.lowerHeader ul li a {
+    color: #353535c4;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s cubic-bezier(1, 0, 0, 1);
+}
+
+.lowerHeader ul li a:hover {
+    color: #676767;
+    border-bottom: 1px solid var(--current-border-color);
+}
+
+a.in {
+    font-weight: bold;
+    color: #676767 !important;
+    border-bottom: 1px solid #676767 !important;
+}
+
+/*for the toggle button*/
+
+.onoffswitch {
+    position: relative;
+    width: 57px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    margin: auto 0;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 20px;
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s;
+    -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 22px;
+    padding: 0;
+    line-height: 22px;
+    font-size: 14px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.onoffswitch-inner:before {
+    content: "\f186";
+    padding-left: 10px;
+    background-color: #272727;
+}
+
+.onoffswitch-inner:after {
+    content: "\f185";
+    padding-right: 10px;
+    background-color: #F0F0F0;
+    color: #999999;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block;
+    width: 18px;
+    margin: 2px;
+    background: #FFFFFF;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 31px;
+    -moz-transition: all 0.3s ease-in 0s;
+    -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+@media screen and (max-width: 480px) {
+    .onoffswitch {
+        display: none;
+    }
+    .error svg {
+        display: none !important;
+    }
+
+    .lowerHeader ul{
+        margin: auto;
+        text-align: center;
+    }
+}

@@ -1,0 +1,211 @@
+.registerwrap {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.registerwrap img {
+    width: 100px;
+    margin: auto auto 10px;
+}
+
+.registerwrap form {
+    margin: 0 auto auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 8px;
+    border: var(--current-border-color) 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 0 4px var(--current-border-color);
+}
+
+.registerwrap form>label.checkbox input {
+    margin: auto 5px auto 0px;
+}
+
+.registerwrap form>label.checkbox {
+    display: flex;
+    font-size: .9em;
+    margin: 5px auto 5px;
+    text-align: center;
+    color: var( --current-text-color-active);
+}
+
+.input {
+    width: 100%;
+    margin: 5px auto;
+    position: relative;
+}
+
+.input .field {
+    background-color: var(--current-background-contrast);
+    padding: 16px 0 5px 0;
+    width: 100%;
+    border-radius: 6px;
+    position: relative;
+}
+
+.input .field input {
+    width: calc(100% - 18px);
+    height: 100%;
+    border: 0;
+    outline: none;
+    line-height: 20px;
+    font-size: 16px;
+    padding: 9px 0 0 16px;
+    font-family: inherit;
+    background: none;
+    color: var( --current-text-color-active);
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
+    color: var( --current-text-color-active);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.input .field input:valid+label, .input .field input:focus+label {
+    font-size: 11px;
+    -webkit-transform: translate(0, -8px);
+    transform: translate(0, -8px);
+}
+
+.input .field label {
+    position: absolute;
+    z-index: 1;
+    left: 16px;
+    top: 50%;
+    line-height: 24px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    opacity: .8;
+    margin: -12px 0 0 0;
+    color: var( --current-text-color);
+    transition: all .3s ease;
+}
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    .checkbox input[type='checkbox'], .checkbox input[type='radio'] {
+        --active: rgb(146, 236, 165);
+        --active-inner: #fff;
+        --input-border: #CDD9ED;
+        --input-border-hover: #23C4F8;
+        --background: transparent;
+        --disabled: #F5F9FF;
+        --disabled-inner: #E4ECFA;
+        --shadow-inner: rgba(18, 22, 33, .1);
+        height: 21px;
+        outline: none;
+        position: relative;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        cursor: pointer;
+        margin-right: 5px;
+        border: 1px solid var(--input-border);
+        background: var(--background);
+        transition: background .3s ease, border-color .3s ease;
+    }
+    .checkbox input[type='checkbox']:after, .checkbox input[type='radio']:after {
+        content: '';
+        display: block;
+        left: 0;
+        top: 0;
+        position: absolute;
+        transition: opacity .2s ease, -webkit-transform .3s ease, -webkit-filter .3s ease;
+        transition: transform .3s ease, opacity .2s ease, filter .3s ease;
+        transition: transform .3s ease, opacity .2s ease, filter .3s ease, -webkit-transform .3s ease, -webkit-filter .3s ease;
+    }
+    .checkbox input[type='checkbox']:checked, .checkbox input[type='radio']:checked {
+        background: var(--active);
+        border-color: var(--active);
+    }
+    .checkbox input[type='checkbox']:checked:after, .checkbox input[type='radio']:checked:after {
+        -webkit-filter: drop-shadow(0 1px 2px var(--shadow-inner));
+        filter: drop-shadow(0 1px 2px var(--shadow-inner));
+        transition: opacity 0.3s ease, -webkit-filter 0.3s ease, -webkit-transform 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2);
+        transition: opacity 0.3s ease, filter 0.3s ease, transform 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2);
+        transition: opacity 0.3s ease, filter 0.3s ease, transform 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2), -webkit-filter 0.3s ease, -webkit-transform 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2);
+    }
+    .checkbox input[type='checkbox']:disabled, .checkbox input[type='radio']:disabled {
+        cursor: not-allowed;
+        opacity: .9;
+        background: var(--disabled);
+    }
+    .checkbox input[type='checkbox']:disabled:checked, .checkbox input[type='radio']:disabled:checked {
+        background: var(--disabled-inner);
+        border-color: var(--input-border);
+    }
+    .checkbox input[type='checkbox']:hover:not(:checked):not(:disabled), .checkbox input[type='radio']:hover:not(:checked):not(:disabled) {
+        border-color: var(--input-border-hover);
+    }
+    .checkbox input[type='checkbox']:not(.switch), .checkbox input[type='radio']:not(.switch) {
+        width: 21px;
+    }
+    .checkbox input[type='checkbox']:not(.switch):after, .checkbox input[type='radio']:not(.switch):after {
+        opacity: 0;
+    }
+    .checkbox input[type='checkbox']:not(.switch):checked:after, .checkbox input[type='radio']:not(.switch):checked:after {
+        opacity: 1;
+    }
+    .checkbox input[type='checkbox']:not(.switch) {
+        border-radius: 6px;
+    }
+    .checkbox input[type='checkbox']:not(.switch):after {
+        width: 5px;
+        height: 9px;
+        border: 2px solid var(--active-inner);
+        border-top: 0;
+        border-left: 0;
+        left: 7px;
+        top: 4px;
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg);
+    }
+    .checkbox input[type='checkbox']:not(.switch):checked:after {
+        -webkit-transform: rotate(43deg);
+        transform: rotate(43deg);
+    }
+    .checkbox input[type='checkbox'].switch {
+        width: 38px;
+        border-radius: 11px;
+    }
+    .checkbox input[type='checkbox'].switch:after {
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: var(--input-border);
+    }
+    .checkbox input[type='checkbox'].switch:checked:after {
+        background: var(--active-inner);
+        -webkit-transform: translateX(17px);
+        transform: translateX(17px);
+    }
+    .checkbox input[type='checkbox'].switch:disabled:not(:checked):after {
+        opacity: .6;
+    }
+    .checkbox input[type='radio'] {
+        border-radius: 50%;
+    }
+    .checkbox input[type='radio']:after {
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        background: var(--active-inner);
+        opacity: 0;
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+    .checkbox input[type='radio']:checked:after {
+        background: var(--active-inner);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+}
